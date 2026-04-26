@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlowSkin - Toko Skincare Terbaik</title>
+    <style>
+        /* Palette peach dari hex codes standar [web:12][web:16] */
+        :root {
+            --peach-light: #FFD8B0;
+            --peach-main: #FFCBA4;
+            --peach-dark: #F9A890;
+            --peach-gradient: linear-gradient(135deg, #FFD8B0, #FFCBA4);
+            --white: #FFFFFF;
+            --text-dark: #5A4A42;
+            --shadow-peach: rgba(255, 203, 164, 0.3);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--peach-light);
+        }
+        header {
+            background: var(--peach-gradient);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px var(--shadow-peach);
+        }
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--white);
+        }
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-menu a:hover {
+            color: var(--peach-dark);
+        }
+        .hero {
+            background: var(--peach-gradient);
+            text-align: center;
+            padding: 5rem 2rem;
+            color: var(--white);
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .hero-btn {
+            background: var(--peach-dark);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .hero-btn:hover {
+            background: var(--text-dark);
+        }
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        .produk-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--peach-dark);
+        }
+        .produk-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .produk-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 10px 30px var(--shadow-peach);
+            transition: transform 0.3s;
+        }
+        .produk-card:hover {
+            transform: translateY(-10px);
+        }
+        .produk-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+        }
+        .produk-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+        .harga {
+            font-size: 1.5rem;
+            color: var(--peach-dark);
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .btn-tambah {
+            background: var(--peach-gradient);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        .btn-tambah:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            background: var(--peach-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+        @media (max-width: 768px) {
+            .nav-menu {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">GlowSkin</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#produk">Produk</a></li>
+                <li><a href="#kategori">Kategori</a></li>
+                <li><a href="#keranjang">Keranjang</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Selamat Datang di Toko Online GlowSkin</h1>
+        <p>Kulit glowing alami dengan skincare terbaik dari bahan lokal Indonesia.</p>
+        <button class="hero-btn">Belanja Sekarang</button>
+    </section>
+
+    <main>
+        <section class="produk-section" id="produk">
+            <h2>Produk Unggulan</h2>
+            <div class="produk-grid">
+        <div class="produk-card">
+            <img src="VIT C SERUM.jpg" alt="Vitamin C Serum GlowSkin untuk mencerahkan kulit" style="filter: hue-rotate(50deg);">
+            <h3>Vitamin C Serum</h3>
+            <div class="harga">Rp 150.000</div>
+            <button class="btn-tambah" onclick="tambahKeranjang('Vitamin C Serum')">Tambah ke Keranjang</button>
+        </div>
+        <div class="produk-card">
+            <img src="moizturier.jpg" alt="Hydrating Moisturizer GlowSkin untuk melembapkan kulit kering">
+            <h3>Hydrating Moisturizer</h3>
+            <div class="harga">Rp 120.000</div>
+            <button class="btn-tambah" onclick="tambahKeranjang('Hydrating Moisturizer')">Tambah ke Keranjang</button>
+        </div>
+        <div class="produk-card">
+            <img src="clay mask.jpg" alt="Clay Mask GlowSkin untuk detoks kulit berminyak" style="filter: sepia(0.3);">
+            <h3>Clay Mask</h3>
+            <div class="harga">Rp 90.000</div>
+            <button class="btn-tambah" onclick="tambahKeranjang('Clay Mask')">Tambah ke Keranjang</button>
+        </div>
+        <div class="produk-card">
+            <img src="sunscreen.jpg" alt="SPF 50 Sunscreen GlowSkin pelindung UV harian">
+            <h3>SPF 50 Sunscreen</h3>
+            <div class="harga">Rp 110.000</div>
+            <button class="btn-tambah" onclick="tambahKeranjang('SPF 50 Sunscreen')">Tambah ke Keranjang</button>
+        </div>
+    </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Kontak: support@glowskin.id | +62 812-3456-7890 | Bandung, Indonesia</p>
+        <p>&copy; 2026 GlowSkin. Semua hak cipta dilindungi.</p>
+    </footer>
+
+    <script>
+        function tambahKeranjang(namaProduk) {
+            alert(namaProduk + ' ditambahkan ke keranjang!');
+        }
+    </script>
+</body>
+</html>
